@@ -1,31 +1,21 @@
 [build]
-  command = ""
+  command = ""         # leave empty; plugins will run
   publish = "_site"
 
-# --- Option A: Path protection via Basic Auth (requires a paid Netlify plan per docs) ---
-# Place this in a _headers file at site root instead if you prefer file-based headers.
-# See: https://docs.netlify.com/manage/security/secure-access-to-sites/basic-authentication-with-custom-http-headers/
-#
-# [[headers]]
-#   for = "/cv/*"
-#   [headers.values]
-#     Basic-Auth = "username:password"
+[[plugins]]
+  package = "@quarto/netlify-plugin-quarto"
 
-# --- Option B: Role-based access with Netlify Identity (free) ---
-# Steps:
-# 1) Enable Identity in your site dashboard. Invite your own email.
-# 2) In Identity > Users, assign role "cv" to your account.
-# 3) Add the redirects below to only allow users with role "cv" to access /cv/*.
-# 4) Create a /login page (or use the Identity widget) to sign in when redirected.
+# (optional) pin a Quarto version
+# [plugins.inputs]
+#   version = "1.6.40"
 
-# Deny by default (non-authenticated users redirected to /login)
+# ---- your CV protection rules ----
 [[redirects]]
   from = "/cv/*"
   to = "/login"
   status = 302
   force = true
 
-# Allow if authenticated with role "cv"
 [[redirects]]
   from = "/cv/*"
   to = "/cv/index.html"
