@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login required</h1>
+    <p>Sign in below to view the CV page.</p>
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <button id="login">Log in</button>
+    <script>
+      if (window.netlifyIdentity) {
+        netlifyIdentity.on('init', user => {
+          if (!user) { netlifyIdentity.on('login', () => document.location.href = '/cv/'); }
+        });
+        netlifyIdentity.init();
+      }
+      document.getElementById('login').addEventListener('click', function() {
+        netlifyIdentity.open();
+      });
+    </script>
+  </body>
+</html>
