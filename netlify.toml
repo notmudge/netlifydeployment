@@ -9,19 +9,6 @@
 # [plugins.inputs]
 #   version = "1.6.40"
 
-# ---- your CV protection rules ----
-[[redirects]]
-  from = "/cv/*"
-  to = "/login"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/cv/*"
-  to = "/cv/index.html"
-  status = 200
-  conditions = { Role = ["cv"] }
-
 [build.environment]
   QUARTO_PROFILE = "ci"
 
