@@ -1,5 +1,5 @@
 [build]
-  command = "quarto render"
+  command = ""
   publish = "_site"
 
 # --- Option A: Path protection via Basic Auth (requires a paid Netlify plan per docs) ---
