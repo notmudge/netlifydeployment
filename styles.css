@@ -1,44 +1,26 @@
-/* ===== Debug first: make the icon row clearly styled ===== */
-.sidebar-tools,
-.quarto-sidebar-tools {                 /* both class names, covers all themes */
-  outline: 2px dashed #9c27b0;         /* TEMP so we can see it's applied */
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+/* Make the sidebar tool icons round buttons */
+.sidebar .sidebar-tools-main a.quarto-navigation-tool {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin-right: 6px !important;
+  border-radius: 50% !important;
+  text-decoration: none !important;
+  color: var(--bs-body-color) !important;
+  background-color: var(--bs-body-bg) !important;
+  transition: background-color .2s, color .2s !important;
+  padding: 0 !important;   /* ensure the icon centers */
+}
+.sidebar .sidebar-tools-main a.quarto-navigation-tool:hover {
+  background-color: var(--bs-link-color) !important;
+  color: #fff !important;
 }
 
-/* Circle buttons (cover all selector variants Quarto uses) */
-.sidebar-tools a,
-.sidebar-tools .quarto-navigation-tool,
-.quarto-sidebar-tools a,
-.quarto-sidebar-tools .quarto-navigation-tool {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  margin-right: 6px;
-  border-radius: 50%;
-  color: var(--bs-body-color);
-  background-color: var(--bs-body-bg);
-  text-decoration: none;
-  transition: background-color .2s, color .2s;
-  border: 1px solid var(--bs-border-color, #e0e0e0);
-}
-
-.sidebar-tools a:hover,
-.sidebar-tools .quarto-navigation-tool:hover,
-.quarto-sidebar-tools a:hover,
-.quarto-sidebar-tools .quarto-navigation-tool:hover {
-  background-color: var(--bs-link-color);
-  color: #fff;
-}
-
-/* ===== Tooltips: use title or aria-label, whichever exists ===== */
-.sidebar-tools a::after,
-.sidebar-tools .quarto-navigation-tool::after,
-.quarto-sidebar-tools a::after,
-.quarto-sidebar-tools .quarto-navigation-tool::after {
+/* Tooltip: use title, fall back to aria-label */
+.sidebar .sidebar-tools-main a.quarto-navigation-tool::after {
   content: attr(title);
   position: absolute;
   bottom: 125%;
@@ -55,23 +37,12 @@
   line-height: 1.2;
   transition: opacity .15s ease-in-out;
 }
-.sidebar-tools a[aria-label]::after,
-.sidebar-tools .quarto-navigation-tool[aria-label]::after,
-.quarto-sidebar-tools a[aria-label]::after,
-.quarto-sidebar-tools .quarto-navigation-tool[aria-label]::after {
+.sidebar .sidebar-tools-main a.quarto-navigation-tool[aria-label]::after {
   content: attr(aria-label);
 }
-.sidebar-tools a:hover::after,
-.sidebar-tools .quarto-navigation-tool:hover::after,
-.quarto-sidebar-tools a:hover::after,
-.quarto-sidebar-tools .quarto-navigation-tool:hover::after {
+.sidebar .sidebar-tools-main a.quarto-navigation-tool:hover::after {
   opacity: 1;
 }
 
-/* Hide tooltip on very small screens (touch) */
-@media (max-width: 600px) {
-  .sidebar-tools a::after,
-  .sidebar-tools .quarto-navigation-tool::after,
-  .quarto-sidebar-tools a::after,
-  .quarto-sidebar-tools .quarto-navigation-tool::after { display: none; }
-}
+/* TEMP: visual proof the CSS is active — remove later */
+.sidebar .sidebar-tools-main { outline: 2px dashed #7aa2ff !important; }
