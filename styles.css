@@ -1,0 +1,49 @@
+/* --- Sidebar tool icons: neat circular buttons --- */
+.sidebar-tools a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  border-radius: 50%;
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.sidebar-tools a:hover {
+  background-color: var(--bs-link-color);
+  color: #fff;
+}
+
+/* --- Tooltip built from the link's title/label --- */
+.sidebar-tools a::after {
+  /* Quarto sets a title/aria-label from your `text:` field */
+  content: attr(title);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.sidebar-tools a:hover::after {
+  opacity: 1;
+}
+
+/* Optional: hide tooltips on very small screens */
+@media (max-width: 600px) {
+  .sidebar-tools a::after { display: none; }
+}
