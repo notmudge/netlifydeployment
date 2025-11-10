@@ -1,7 +1,17 @@
 <div class="sidebar-header">
-  <img 
-    src="https://placehold.co/120x120?text=M" 
-    alt="Placeholder image for Mudge" 
+  <img
+    src="https://placehold.co/120x120?text=M"
+    alt="Placeholder image for Mudge"
     class="sidebar-avatar">
   <h3 class="sidebar-name">Mudge</h3>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.sidebar-header');
+    const tools = document.querySelector('.sidebar .sidebar-tools-main');
+    if (header && tools && tools.parentNode) {
+      tools.parentNode.insertBefore(header, tools); // place header above icons
+    }
+  });
+</script>
