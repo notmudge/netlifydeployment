@@ -5,7 +5,7 @@ project:
     - styles.css
 
 website:
-  title: "Mudge — Data Science Blog"
+  title: "Mudge"
   sidebar:
     style: docked
     search: true
