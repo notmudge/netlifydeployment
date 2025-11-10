@@ -23,3 +23,10 @@ plt.plot(x, y)
 plt.title("Sine wave")
 plt.show()
 ```
+
+[[plugins]]
+package = "@quarto/netlify-plugin-quarto"
+
+# Optional: pin a specific Quarto version
+#   [plugins.inputs]
+#   version = "1.6.40"   # example
