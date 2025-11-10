@@ -38,12 +38,6 @@ website:
             href: about.qmd       # make sure this file exists
           - text: "CV"
             href: cv/index.qmd    # make sure cv/index.qmd exists
-      - section: "Posts"
-        # You can either auto-include all documents in the folder...
-        contents: posts/index.qmd           # ...requires a /posts/ folder with .qmd/.ipynb files
-        # ...or explicitly list a posts index page you create:
-        # contents:
-        #   - posts/index.qmd
 
 format:
   html:
