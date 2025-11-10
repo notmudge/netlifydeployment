@@ -1,4 +1,5 @@
-<div class="sidebar-header">
+<!-- Sidebar profile block (injected into sidebar) -->
+<div class="sidebar-header" id="sidebar-profile">
   <img
     src="https://placehold.co/120x120?text=M"
     alt="Placeholder image for Mudge"
@@ -6,12 +7,14 @@
   <h3 class="sidebar-name">Mudge</h3>
 </div>
 
+<!-- Move it into the sidebar -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.sidebar-header');
-    const tools = document.querySelector('.sidebar .sidebar-tools-main');
-    if (header && tools && tools.parentNode) {
-      tools.parentNode.insertBefore(header, tools); // place header above icons
+    const header = document.getElementById('sidebar-profile');
+    const sidebar = document.querySelector('.sidebar');
+    const search = sidebar?.querySelector('.sidebar-search');
+    if (sidebar && header && search) {
+      sidebar.insertBefore(header, search); // place above search bar
     }
   });
 </script>
