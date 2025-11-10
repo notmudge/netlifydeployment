@@ -4,40 +4,30 @@ project:
     - sidebar-header.html
 
 website:
-  title: "Mudge — Data Science Blog"
   sidebar:
-    style: "docked"
+    style: docked
     search: true
     tools:
       - icon: github
         href: https://github.com/notmudge
-        text: "GitHub"
+        text: GitHub
         target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/YOUR-LINKEDIN/
-        text: "LinkedIn"
+        text: LinkedIn
         target: _blank
       - icon: envelope
         href: "mailto:you@example.com"
-        text: "Email"
+        text: Email
       - icon: bar-chart
         href: https://www.kaggle.com/alexmudge
-        text: "Kaggle"
+        text: Kaggle
         target: _blank
-    contents:
-      - text: "Home"
-        href: index.qmd
-      - text: "About"
-        href: about.qmd
-      - text: "CV"
-        href: cv/index.qmd
-      - section: "Posts"
-        contents: posts
 
 format:
   html:
     theme: cosmo
+    css: styles.css
     toc: true
     code-fold: show
-    css: styles.css
-    include-after-body: sidebar-header.html
+    include-after-body: sidebar-header.html  # keep this
