@@ -4,36 +4,24 @@ project:
 website:
   title: "Mudge — Data Science Blog"
   sidebar:
-    style: "docked"     # or "floating" if you want collapsible on mobile
+    style: "docked"      # "docked" keeps it fixed like in your image
     search: true
+    tools:
+      - icon: github
+        href: https://github.com/notmudge
+      - icon: linkedin
+        href: https://www.linkedin.com/in/YOUR-LINKEDIN/
+      - icon: envelope
+        href: "mailto:you@example.com"
     contents:
-      # --- Top section: external/social links ---
-      - section: "Connect"
-        contents:
-          - text: "GitHub"
-            icon: github
-            href: https://github.com/notmudge
-          - text: "LinkedIn"
-            icon: linkedin
-            href: https://www.linkedin.com/in/YOUR-LINKEDIN/
-          - text: "Kaggle"
-            icon: bar-chart
-            href: https://www.kaggle.com/YOUR-KAGGLE
-          - text: "Email"
-            icon: envelope
-            href: "mailto:you@example.com"
-
-      # --- Main site navigation ---
-      - section: "Navigation"
-        contents:
-          - text: "Home"
-            href: index.qmd
-          - text: "About"
-            href: about.qmd
-          - text: "CV"
-            href: cv/index.qmd
-          - text: "Blog Posts"
-            href: posts/
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "CV"
+        href: cv/index.qmd
+      - section: "Posts"
+        contents: posts
 
 format:
   html:
