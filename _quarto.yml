@@ -17,11 +17,11 @@ website:
         text: GitHub
         target: _blank
       - icon: linkedin
-        href: https://www.linkedin.com/in/YOUR-LINKEDIN/
+        href: https://www.linkedin.com/in/notmudge/
         text: LinkedIn
         target: _blank
       - icon: envelope
-        href: "mailto:you@example.com"
+        href: "mailto:mudge@protonmail.com"
         text: Email
       - icon: bar-chart
         href: https://www.kaggle.com/alexmudge
