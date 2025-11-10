@@ -37,4 +37,5 @@ format:
     theme: cosmo
     toc: true
     code-fold: show
-    css: styles.css    # 👈 add this line
+    css: styles.css
+    include-before-body: sidebar-header.html
