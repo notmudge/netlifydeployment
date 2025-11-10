@@ -48,7 +48,7 @@
 .sidebar .sidebar-tools-main { outline: 2px dashed #7aa2ff !important; }
 
 
-/* --- Sidebar Header with profile image and name --- */
+/* --- Sidebar Header (image + name) --- */
 .sidebar-header {
   display: flex;
   flex-direction: column;
@@ -72,9 +72,10 @@
   color: var(--bs-body-color);
 }
 
-/* Center the icons under the header */
+/* --- Center the icon buttons under the header --- */
 .sidebar-tools-main {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
+
