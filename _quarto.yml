@@ -1,11 +1,12 @@
-project:
-  type: website
-
 website:
-  title: "Mudge — Data Science Blog"
+  title: "Mudge"
   sidebar:
     style: "docked"
     search: true
+
+    # 👇 Include the custom header ABOVE the tools
+    logo: sidebar-header.html
+
     tools:
       - icon: github
         href: https://github.com/notmudge
@@ -22,6 +23,7 @@ website:
         href: https://www.kaggle.com/alexmudge
         text: "Kaggle"
         target: _blank
+
     contents:
       - text: "Home"
         href: index.qmd
@@ -38,4 +40,3 @@ format:
     toc: true
     code-fold: show
     css: styles.css
-    include-before-body: sidebar-header.html
