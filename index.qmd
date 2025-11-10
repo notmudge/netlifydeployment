@@ -3,13 +3,11 @@ title: "Welcome"
 page-layout: article
 ---
 
-# Hi, I'm Mudge 👋
+# Hi, I'm XXXX👋
 
 This is my data‑science blog built with **Quarto** and deployed on **Netlify**.
 
-- Posts are under `posts/`
-- CV lives at `cv/index.qmd` (you'll protect this path on Netlify)
-- You can write posts as `.qmd` or Jupyter notebooks `.ipynb`
+XXXXXXX
 
 Below is a tiny Python example with a plot:
 
@@ -23,10 +21,3 @@ plt.plot(x, y)
 plt.title("Sine wave")
 plt.show()
 ```
-
-[[plugins]]
-package = "@quarto/netlify-plugin-quarto"
-
-# Optional: pin a specific Quarto version
-#   [plugins.inputs]
-#   version = "1.6.40"   # example
