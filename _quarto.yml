@@ -4,17 +4,24 @@ project:
 website:
   title: "Mudge — Data Science Blog"
   sidebar:
-    style: "docked"      # "docked" keeps it fixed like in your image
+    style: "docked"
     search: true
     tools:
       - icon: github
         href: https://github.com/notmudge
+        text: "GitHub"
+        target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/YOUR-LINKEDIN/
+        text: "LinkedIn"
+        target: _blank
       - icon: envelope
         href: "mailto:you@example.com"
+        text: "Email"
       - icon: bar-chart
         href: https://www.kaggle.com/alexmudge
+        text: "Kaggle"
+        target: _blank
     contents:
       - text: "Home"
         href: index.qmd
@@ -30,3 +37,4 @@ format:
     theme: cosmo
     toc: true
     code-fold: show
+    css: styles.css    # 👈 add this line
