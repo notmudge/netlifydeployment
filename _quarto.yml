@@ -10,7 +10,7 @@ website:
     style: docked
     search: true
 
-    # static icons row (unchanged)
+    # static icons row
     tools:
       - icon: github
         href: https://github.com/notmudge
@@ -28,16 +28,38 @@ website:
         text: Kaggle
         target: _blank
 
-    # 👇 THIS is the "context" — your sidebar navigation
+    # Linux-style tree sidebar
     contents:
-      - section: "Main"
+      - text: "/"
+        href: index.qmd
+      - text: "├── about"
+        href: about.qmd
+      - text: "├── cv"
+        href: cv/index.qmd
+      - text: "├── learning/"
         contents:
-          - text: "Home"
-            href: index.qmd
-          - text: "About"
-            href: about.qmd       # make sure this file exists
-          - text: "CV"
-            href: cv/index.qmd    # make sure cv/index.qmd exists
+          - text: "│   ├── python"
+            href: learning/python.qmd
+          - text: "│   ├── sql"
+            href: learning/sql.qmd
+          - text: "│   ├── powerbi"
+            href: learning/powerbi.qmd
+          - text: "│   └── kaggle"
+            href: learning/kaggle.qmd
+      - text: "├── projects/"
+        contents:
+          - text: "│   ├── index"
+            href: projects/index.qmd
+          - text: "│   ├── powerbi"
+            href: projects/powerbi.qmd
+          - text: "│   └── python"
+            href: projects/python.qmd
+      - text: "└── blog/"
+        contents:
+          - text: "    ├── index"
+            href: blog/index.qmd
+          - text: "    └── reflections"
+            href: blog/reflections.qmd
 
 format:
   html:

@@ -1,4 +1,4 @@
-<!-- Sidebar profile block (we'll move it into the sidebar) -->
+<!-- Sidebar profile block -->
 <div class="sidebar-header" id="sidebar-profile">
   <img
     src="https://placehold.co/120x120?text=M"
@@ -9,6 +9,7 @@
 
 <script>
   (function () {
+    // === 1. Move the profile header into place ===
     function placeHeader() {
       const header = document.getElementById('sidebar-profile');
       if (!header) return false;
@@ -27,7 +28,7 @@
         return true;
       }
 
-      // Last resort: top of the sidebar content/menu
+      // Last resort: top of sidebar
       const container = document.querySelector(
         '.sidebar .sidebar-menu-container, .sidebar .sidebar-content, .sidebar'
       );
@@ -38,12 +39,33 @@
       return false;
     }
 
-    // Try now; if sidebar not ready yet, watch until it appears
+    // Run placement logic immediately or when sidebar appears
     if (!placeHeader()) {
       const mo = new MutationObserver(() => {
         if (placeHeader()) mo.disconnect();
       });
       mo.observe(document.body, { childList: true, subtree: true });
     }
+
+    // === 2. Add dynamic terminal-style path to the sidebar ===
+    document.addEventListener("DOMContentLoaded", () => {
+      const sidebar = document.querySelector(".sidebar");
+      if (!sidebar) return;
+
+      // Extract the current path (strip extensions and trailing slashes)
+      const path = window.location.pathname
+        .replace(/\/index\.html$/, "/")
+        .replace(/\.html$/, "")
+        .replace(/\/$/, "")
+        .split("/")
+        .filter(Boolean)
+        .join("/");
+
+      // Format it like a shell path
+      const displayPath = path ? `~/${path}` : "~";
+
+      // Set it as an attribute for CSS to use
+      sidebar.setAttribute("data-terminal-path", displayPath);
+    });
   })();
 </script>
