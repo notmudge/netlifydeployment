@@ -1,4 +1,4 @@
-<!-- Sidebar profile block (injected into sidebar) -->
+<!-- Sidebar profile block (we'll move it into the sidebar) -->
 <div class="sidebar-header" id="sidebar-profile">
   <img
     src="https://placehold.co/120x120?text=M"
@@ -7,14 +7,43 @@
   <h3 class="sidebar-name">Mudge</h3>
 </div>
 
-<!-- Move it into the sidebar -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.getElementById('sidebar-profile');
-    const sidebar = document.querySelector('.sidebar');
-    const search = sidebar?.querySelector('.sidebar-search');
-    if (sidebar && header && search) {
-      sidebar.insertBefore(header, search); // place above search bar
+  (function () {
+    function placeHeader() {
+      const header = document.getElementById('sidebar-profile');
+      if (!header) return false;
+
+      // Preferred: just above the tool icons row
+      const tools = document.querySelector('.sidebar .sidebar-tools-main');
+      if (tools && tools.parentNode) {
+        tools.parentNode.insertBefore(header, tools);
+        return true;
+      }
+
+      // Fallback: above the search box
+      const search = document.querySelector('.sidebar .sidebar-search');
+      if (search && search.parentNode) {
+        search.parentNode.insertBefore(header, search);
+        return true;
+      }
+
+      // Last resort: top of the sidebar content/menu
+      const container = document.querySelector(
+        '.sidebar .sidebar-menu-container, .sidebar .sidebar-content, .sidebar'
+      );
+      if (container) {
+        container.insertBefore(header, container.firstChild);
+        return true;
+      }
+      return false;
     }
-  });
+
+    // Try now; if sidebar not ready yet, watch until it appears
+    if (!placeHeader()) {
+      const mo = new MutationObserver(() => {
+        if (placeHeader()) mo.disconnect();
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    }
+  })();
 </script>
