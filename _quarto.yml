@@ -13,6 +13,8 @@ website:
         href: https://www.linkedin.com/in/YOUR-LINKEDIN/
       - icon: envelope
         href: "mailto:you@example.com"
+      - icon: bar-chart
+        href: https://www.kaggle.com/alexmudge
     contents:
       - text: "Home"
         href: index.qmd
