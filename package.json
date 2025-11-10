@@ -1,4 +1,7 @@
+// package.json
 {
+  "name": "quarto-ds-blog",
+  "private": true,
   "dependencies": {
     "@quarto/netlify-plugin-quarto": "^0.0.5"
   }
