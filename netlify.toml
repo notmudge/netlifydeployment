@@ -21,3 +21,7 @@
   to = "/cv/index.html"
   status = 200
   conditions = { Role = ["cv"] }
+
+[build.environment]
+  QUARTO_PROFILE = "ci"
+
