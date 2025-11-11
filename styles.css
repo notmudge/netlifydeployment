@@ -29,12 +29,17 @@ body {
 
 /* === Sidebar: Linux-style terminal aesthetic (light + auto theme) === */
 .sidebar {
+  --sb-pad-x: 0.9rem;
+  --sb-pad-y: 0.5rem;
+  --sb-font-size: 0.9em;
+  --sb-line-height: 1.4;
+
   font-family: "Courier New", Courier, monospace;
-  font-size: 0.95em;
-  line-height: 1.4;
-  background-color: #f8f9fa; /* light background */
-  border-right: 1px solid #ccc;
-  color: #333;
+  font-size: var(--sb-font-size);
+  line-height: var(--sb-line-height);
+  background-color: #ffffff; /* clean white */
+  border-right: 1px solid #e0e0e0;
+  color: #242424;
   padding-top: 0;
 }
 
@@ -42,32 +47,36 @@ body {
 .sidebar::before {
   content: "mudge@site:" attr(data-terminal-path) "$";
   display: block;
-  background-color: #f1f1f1; /* lighter grey for contrast */
-  color: #004085; /* deep blue-green for readability */
-  font-weight: bold;
-  font-size: 0.9em;
-  line-height: 1.3;
+  background-color: #f7f7f7; /* slightly lighter than link hover */
+  color: #00509e; /* readable blue text */
+  font-weight: 600;
+  font-size: var(--sb-font-size);
+  line-height: var(--sb-line-height);
   white-space: nowrap;
-  padding: 0.5em 1em;
-  border-bottom: 1px solid #ccc;
+  padding: var(--sb-pad-y) var(--sb-pad-x);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* Sidebar links */
 .sidebar .nav-link {
-  color: #444;
-  padding: 0.25em 1em;
+  color: #333333;
+  padding: var(--sb-pad-y) var(--sb-pad-x);
+  font-size: var(--sb-font-size);
+  line-height: var(--sb-line-height);
   display: block;
+  margin: 0;
+  text-indent: 0;
 }
 
 .sidebar .nav-link:hover {
-  color: #000;
-  background-color: #e0e0e0;
+  background-color: #f2f2f2;
+  color: #000000;
 }
 
 .sidebar .nav-link.active {
-  color: #008000;
+  color: #006d3c;
   background-color: transparent;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 /* Preserve ASCII tree alignment */
