@@ -35,8 +35,6 @@ website:
 
       - section: "ABOUT"
         contents:
-          - text: "about"
-            href: about.qmd
           - text: "cv"
             href: cv/index.qmd
 

@@ -1,23 +1,57 @@
+# Welcome to NotMudge
+
+I’ve spent my career in project management, process improvement, and business change —  
+helping teams make complex systems work better and more efficiently.
+
+Now, I’m moving into **data science** — combining practical, operational experience  
+with analytical tools to understand and improve systems in a deeper, data-driven way.
+
+This site is a space for experiments, learning notes, and reflections  
+at the intersection of *data, engineering, and real-world problem-solving.*
+
 ---
-title: "Welcome"
-page-layout: article
----
 
-# Hi, I'm XXXX👋
+## Recent Work
+Here’s a live feed of my recent GitHub commits:
 
-This is my data‑science blog built with **Quarto** and deployed on **Netlify**.
+<div id="commit-list">Loading commits...</div>
 
-XXXXXXX
+<script>
+  const GH_USER = "notmudge";
+  const LIMIT = 10;
 
-Below is a tiny Python example with a plot:
+  async function loadCommits() {
+    const res = await fetch(`https://api.github.com/users/${GH_USER}/events/public`);
+    if (!res.ok) return;
+    const events = await res.json();
 
-```{python}
-import numpy as np
-import matplotlib.pyplot as plt
+    const commits = [];
+    for (const ev of events) {
+      if (ev.type === "PushEvent") {
+        const repo = ev.repo?.name;
+        const when = ev.created_at;
+        for (const c of ev.payload.commits || []) {
+          commits.push({
+            msg: c.message,
+            url: `https://github.com/${repo}/commit/${c.sha}`,
+            repo,
+            when
+          });
+        }
+      }
+      if (commits.length >= LIMIT) break;
+    }
 
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-plt.plot(x, y)
-plt.title("Sine wave")
-plt.show()
-```
+    const list = document.getElementById("commit-list");
+    list.innerHTML = commits.length
+      ? `<ul>${commits.map(c => `
+          <li>
+            <a href="${c.url}" target="_blank" rel="noopener">${c.msg}</a>
+            <small> — ${c.repo} • ${new Date(c.when).toLocaleDateString()}</small>
+          </li>
+        `).join("")}</ul>`
+      : "<p>No recent public commits found.</p>";
+  }
+
+  loadCommits();
+</script>
