@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+# About Mudge
+
+Short intro about you and the blog.
