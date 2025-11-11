@@ -69,7 +69,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: darkly
     toc: true
     code-fold: show
     css: styles.css

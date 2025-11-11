@@ -1,7 +1,38 @@
 @import url("https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css");
 
+:root {
+  color-scheme: dark;
+  --page-bg: #050914;
+  --page-text: #e2e8f0;
+  --page-muted: #94a3b8;
+  --link-color: #7dd3fc;
+  --link-hover-color: #38bdf8;
+  --sb-bg: #0b1120;
+  --sb-border: #1e293b;
+  --sb-text: #cbd5f5;
+  --sb-accent: #4ade80;
+  --sb-hover: #172032;
+}
+
 body {
   font-family: "Hack", "Hack Nerd Font", monospace;
+  background-color: var(--page-bg);
+  color: var(--page-text);
+}
+
+main, .content, .content .page-layout, #quarto-margin-sidebar {
+  background-color: transparent;
+  color: inherit;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 .sidebar-header {
@@ -16,18 +47,19 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.5rem;
-  border: 2px solid var(--bs-border-color, #ddd);
+  border: 2px solid var(--sb-border);
+  box-shadow: 0 0 20px rgba(57, 144, 255, 0.25);
 }
 .sidebar-name {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
-  color: var(--bs-body-color);
+  color: var(--sb-text);
 }
 /* keep your icon-centering rules */
 .sidebar-tools-main { display: flex; justify-content: center; margin-bottom: 1rem; }
 
-/* === Sidebar: Linux-style terminal aesthetic (light + auto theme) === */
+/* === Sidebar: Linux-style terminal aesthetic (dark) === */
 .sidebar {
   --sb-pad-x: 0.9rem;
   --sb-pad-y: 0.5rem;
@@ -37,10 +69,11 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-size: var(--sb-font-size);
   line-height: var(--sb-line-height);
-  background-color: #ffffff; /* clean white */
-  border-right: 1px solid #e0e0e0;
-  color: #242424;
+  background-color: var(--sb-bg);
+  border-right: 1px solid var(--sb-border);
+  color: var(--sb-text);
   padding-top: 0;
+  box-shadow: inset -6px 0 15px rgba(0, 0, 0, 0.45);
 }
 
 /* Add terminal header bar */
@@ -49,36 +82,37 @@ body {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  background-color: inherit; /* match sidebar background exactly */
-  color: #00509e; /* readable blue text */
+  background-color: #090f1c;
+  color: var(--sb-accent);
   font-weight: 600;
   font-size: var(--sb-font-size);
   line-height: var(--sb-line-height);
   white-space: nowrap;
   padding: var(--sb-pad-y) var(--sb-pad-x);
-  border-bottom: 1px solid #e0e0e0; /* subtle separator */
+  border-bottom: 1px solid var(--sb-border);
   margin: 0;
 }
 
 /* Sidebar links */
 .sidebar .nav-link {
-  color: #333333;
+  color: var(--sb-text);
   padding: var(--sb-pad-y) var(--sb-pad-x);
   font-size: var(--sb-font-size);
   line-height: var(--sb-line-height);
   display: block;
   margin: 0;
   text-indent: 0;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .sidebar .nav-link:hover {
-  background-color: #f2f2f2;
-  color: #000000;
+  background-color: var(--sb-hover);
+  color: var(--sb-accent);
 }
 
 .sidebar .nav-link.active {
-  color: #006d3c;
-  background-color: transparent;
+  color: var(--sb-accent);
+  background-color: rgba(74, 222, 128, 0.06);
   font-weight: 600;
 }
 
