@@ -9,6 +9,7 @@ website:
   sidebar:
     style: docked
     search: true
+    collapse-level: 1
 
     # static icons row
     tools:
@@ -28,37 +29,42 @@ website:
         text: Kaggle
         target: _blank
 
-    # Linux-style tree sidebar
     contents:
       - text: "/"
         href: index.qmd
-      - text: "├── about"
-        href: about.qmd
-      - text: "├── cv"
-        href: cv/index.qmd
-      - text: "├── learning/"
+
+      - section: "ABOUT"
         contents:
-          - text: "│   ├── python"
+          - text: "about"
+            href: about.qmd
+          - text: "cv"
+            href: cv/index.qmd
+
+      - section: "LEARNING"
+        contents:
+          - text: "learning/python"
             href: learning/python.qmd
-          - text: "│   ├── sql"
+          - text: "learning/sql"
             href: learning/sql.qmd
-          - text: "│   ├── powerbi"
+          - text: "learning/powerbi"
             href: learning/powerbi.qmd
-          - text: "│   └── kaggle"
+          - text: "learning/kaggle"
             href: learning/kaggle.qmd
-      - text: "├── projects/"
+
+      - section: "PROJECTS"
         contents:
-          - text: "│   ├── index"
+          - text: "projects/index"
             href: projects/index.qmd
-          - text: "│   ├── powerbi"
+          - text: "projects/powerbi"
             href: projects/powerbi.qmd
-          - text: "│   └── python"
+          - text: "projects/python"
             href: projects/python.qmd
-      - text: "└── blog/"
+
+      - section: "BLOG"
         contents:
-          - text: "    ├── index"
+          - text: "blog/index"
             href: blog/index.qmd
-          - text: "    └── reflections"
+          - text: "blog/reflections"
             href: blog/reflections.qmd
 
 format:
