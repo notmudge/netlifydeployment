@@ -1,38 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css");
 
-:root {
-  color-scheme: dark;
-  --page-bg: #050914;
-  --page-text: #e2e8f0;
-  --page-muted: #94a3b8;
-  --link-color: #7dd3fc;
-  --link-hover-color: #38bdf8;
-  --sb-bg: #020617;
-  --sb-border: #1a2236;
-  --sb-text: #f8fafc;
-  --sb-accent: #7dd3fc;
-  --sb-hover: #172032;
-}
-
 body {
   font-family: "Hack", "Hack Nerd Font", monospace;
-  background-color: var(--page-bg);
-  color: var(--page-text);
-}
-
-main, .content, .content .page-layout, #quarto-margin-sidebar {
-  background-color: transparent;
-  color: inherit;
-}
-
-a {
-  color: var(--link-color);
-}
-
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: none;
 }
 
 .sidebar-header {
@@ -41,112 +10,25 @@ a:focus {
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .sidebar-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.5rem;
-  border: 2px solid var(--sb-border);
-  box-shadow: 0 0 20px rgba(57, 144, 255, 0.25);
+  border: 2px solid var(--bs-border-color, #444);
 }
+
 .sidebar-name {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
-  color: var(--sb-text);
-}
-/* keep your icon-centering rules */
-.sidebar-tools-main { display: flex; justify-content: center; margin-bottom: 1rem; }
-
-/* === Sidebar: Linux-style terminal aesthetic (dark) === */
-.sidebar {
-  --sb-pad-x: 0.9rem;
-  --sb-pad-y: 0.5rem;
-  --sb-font-size: 0.9em;
-  --sb-line-height: 1.4;
-
-  font-family: "Courier New", Courier, monospace;
-  font-size: var(--sb-font-size);
-  line-height: var(--sb-line-height);
-  background-color: var(--sb-bg);
-  border-right: 1px solid var(--sb-border);
-  color: var(--sb-text);
-  padding-top: 0;
-  box-shadow: inset -6px 0 15px rgba(0, 0, 0, 0.45);
+  color: var(--bs-body-color);
 }
 
-/* Add terminal header bar */
-.sidebar::before {
-  content: "mudge@site:" attr(data-terminal-path) "$";
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  background: linear-gradient(90deg, rgba(23,34,62,0.95), rgba(8,12,24,0.95));
-  color: var(--sb-accent);
-  font-weight: 600;
-  font-size: var(--sb-font-size);
-  line-height: var(--sb-line-height);
-  white-space: nowrap;
-  padding: var(--sb-pad-y) var(--sb-pad-x);
-  border-bottom: 1px solid var(--sb-border);
-  margin: 0;
-}
-
-/* Sidebar links */
-.sidebar .nav-link {
-  color: var(--sb-text);
-  padding: var(--sb-pad-y) var(--sb-pad-x);
-  font-size: var(--sb-font-size);
-  line-height: var(--sb-line-height);
-  display: block;
-  margin: 0;
-  text-indent: 0;
-  transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.sidebar .nav-link:hover {
-  background-color: var(--sb-hover);
-  color: var(--sb-accent);
-}
-
-.sidebar .nav-link.active {
-  color: var(--sb-accent);
-  background-color: rgba(125, 211, 252, 0.12);
-  font-weight: 600;
-}
-
-/* Preserve ASCII tree alignment */
-.sidebar .nav-link {
-  white-space: pre;
-}
-
-/* Normalize internal spacing so header and links align */
-.sidebar,
-.sidebar .sidebar-content,
-.sidebar .sidebar-menu-container,
-.sidebar .sidebar-tools-main,
-.sidebar .sidebar-search {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Ensure no unexpected margins shift the list */
-.sidebar .nav,
-.sidebar .sidebar-menu-container .nav {
-  margin: 0;
-  padding: 0;
-}
-
-/* Ensure the profile header block aligns with link padding if present */
-#sidebar-profile {
-  padding: var(--sb-pad-y) var(--sb-pad-x);
-  margin: 0;
-}
-
-/* Remove any left indents Quarto may add in some themes */
-.sidebar .sidebar-section,
-.sidebar .sidebar-item {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
+.sidebar-tools-main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
