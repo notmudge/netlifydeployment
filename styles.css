@@ -7,10 +7,10 @@
   --page-muted: #94a3b8;
   --link-color: #7dd3fc;
   --link-hover-color: #38bdf8;
-  --sb-bg: #0b1120;
-  --sb-border: #1e293b;
-  --sb-text: #cbd5f5;
-  --sb-accent: #4ade80;
+  --sb-bg: #020617;
+  --sb-border: #1a2236;
+  --sb-text: #f8fafc;
+  --sb-accent: #7dd3fc;
   --sb-hover: #172032;
 }
 
@@ -82,7 +82,7 @@ a:focus {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  background-color: #090f1c;
+  background: linear-gradient(90deg, rgba(23,34,62,0.95), rgba(8,12,24,0.95));
   color: var(--sb-accent);
   font-weight: 600;
   font-size: var(--sb-font-size);
@@ -112,7 +112,7 @@ a:focus {
 
 .sidebar .nav-link.active {
   color: var(--sb-accent);
-  background-color: rgba(74, 222, 128, 0.06);
+  background-color: rgba(125, 211, 252, 0.12);
   font-weight: 600;
 }
 
