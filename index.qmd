@@ -1,3 +1,9 @@
+---
+title: "Welcome to NotMudge"
+---
+
+---
+
 # Welcome to NotMudge
 
 I’ve spent my career in project management, process improvement, and business change —  
@@ -10,3 +16,14 @@ This site is a space for experiments, learning notes, and reflections
 at the intersection of *data, engineering, and real-world problem-solving.*
 
 ---
+
+## Most Recent Work
+
+```{listing}
+#| contents: blog
+#| sort: "date desc"
+#| limit: 1
+#| fields: [title, date, description]
+```
+
+See more posts on the [blog index](blog/index.qmd).
