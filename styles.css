@@ -47,14 +47,17 @@ body {
 .sidebar::before {
   content: "mudge@site:" attr(data-terminal-path) "$";
   display: block;
-  background-color: #f7f7f7; /* slightly lighter than link hover */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: inherit; /* match sidebar background exactly */
   color: #00509e; /* readable blue text */
   font-weight: 600;
   font-size: var(--sb-font-size);
   line-height: var(--sb-line-height);
   white-space: nowrap;
   padding: var(--sb-pad-y) var(--sb-pad-x);
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0; /* subtle separator */
+  margin: 0;
 }
 
 /* Sidebar links */
@@ -82,4 +85,34 @@ body {
 /* Preserve ASCII tree alignment */
 .sidebar .nav-link {
   white-space: pre;
+}
+
+/* Normalize internal spacing so header and links align */
+.sidebar,
+.sidebar .sidebar-content,
+.sidebar .sidebar-menu-container,
+.sidebar .sidebar-tools-main,
+.sidebar .sidebar-search {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Ensure no unexpected margins shift the list */
+.sidebar .nav,
+.sidebar .sidebar-menu-container .nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the profile header block aligns with link padding if present */
+#sidebar-profile {
+  padding: var(--sb-pad-y) var(--sb-pad-x);
+  margin: 0;
+}
+
+/* Remove any left indents Quarto may add in some themes */
+.sidebar .sidebar-section,
+.sidebar .sidebar-item {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
