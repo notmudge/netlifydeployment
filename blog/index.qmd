@@ -1,11 +1,9 @@
 ---
 title: "Blog"
 listing:
-  contents: posts/**     # or posts/** if you keep posts at the repo root
+  contents: ../posts/**     # <-- go up one level, then into posts
   sort: "date desc"
-  type: default                # try "grid" if you prefer
+  type: default
   page-size: 10
-  categories: true
 ---
 Welcome! Latest posts below.
-
