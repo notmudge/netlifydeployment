@@ -2,14 +2,11 @@
 title: "My Post"
 description: "Post description"
 author: "Fizz McPhee"
-date: "5/22/2021"
+date: 2021-05-22   # ISO dates are safest (strings also fine)
 draft: false
+---
 
-
-
-Testing 
+Testing
 
 1232132
 123123
-
----
