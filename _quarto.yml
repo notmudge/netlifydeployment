@@ -62,8 +62,6 @@ website:
         contents:
           - text: "blog/index"
             href: blog/index.qmd
-          - text: "blog/reflections"
-            href: blog/reflections.qmd
 
 format:
   html:

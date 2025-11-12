@@ -16,3 +16,12 @@ This site is a space for experiments, learning notes, and reflections
 at the intersection of *data, engineering, and real-world problem-solving.*
 
 ---
+---
+title: "Blog"
+listing:
+  contents: ../posts/**     # <-- go up one level, then into posts
+  sort: "date desc"
+  type: default
+  page-size: 10
+---
+Welcome! Latest posts below.
