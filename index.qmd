@@ -13,14 +13,8 @@ Now, I’m moving into **data science** — combining practical, operational exp
 with analytical tools to understand and improve systems in a deeper, data-driven way.
 
 This site is a space for experiments, learning notes, and reflections  
-at the intersection of *data, engineering, and real-world problem-solving.*
+at the intersection of *data, engineering, and real-world problem-solving.
 
 ---
-title: "Blog"
-listing:
-  contents: ../posts/**     # <-- go up one level, then into posts
-  sort: "date desc"
-  type: default
-  page-size: 10
----
-Welcome! Latest posts below.
+
+
