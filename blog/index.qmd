@@ -1,9 +1,11 @@
 ---
 title: "Blog"
 listing:
-  contents: posts
+  contents: posts/**     # or posts/** if you keep posts at the repo root
   sort: "date desc"
-  type: default
+  type: default                # try "grid" if you prefer
+  page-size: 10
   categories: true
 ---
+Welcome! Latest posts below.
 
