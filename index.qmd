@@ -1,11 +1,7 @@
 ---
 title: "Welcome to NotMudge"
 ---
-
 ---
-
-# Welcome to NotMudge
-
 I’ve spent my career in project management, process improvement, and business change —  
 helping teams make complex systems work better and more efficiently.
 
@@ -13,8 +9,7 @@ Now, I’m moving into **data science** — combining practical, operational exp
 with analytical tools to understand and improve systems in a deeper, data-driven way.
 
 This site is a space for experiments, learning notes, and reflections  
-at the intersection of *data, engineering, and real-world problem-solving.
-
+at the intersection of data, engineering, and real-world problem-solving.
 ---
 
 
