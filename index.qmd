@@ -2,6 +2,8 @@
 title: "Placeholder 123"
 ---
 
+# Introduction
+
 I’ve spent my career in project management, process improvement, and business change —  
 helping teams make complex systems work better and more efficiently.
 
